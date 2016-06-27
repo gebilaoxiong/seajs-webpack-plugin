@@ -10,9 +10,9 @@ var seajsWebpackPlugin;
 
 overwrites = [
 
-  require('./overwrite/externalModuleSouce'),
+  require('./overwrite/ExternalModule'),
 
-  require('./overwrite/libraryTemplatePluginApply')
+  require('./overwrite/LibraryTemplatePlugin')
 ]
 
 

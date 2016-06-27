@@ -1,6 +1,6 @@
 {
   "name": "seajs-webpack-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "将webpack生成的文件转换成seajs模块文件。",
   "main": "index.js",
   "scripts": {

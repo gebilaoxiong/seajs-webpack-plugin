@@ -1,12 +1,11 @@
 /**
- * @authors       xiongyang (xiongyang@zhubajie.com)
+ * @authors       gebilaoxiong (gebilaoxiong@gmail.com)
  * @date          2016-06-24 17:59:03
- * @description   重写LibraryTemplatePlugin的Apply方法
- *                webpack这里设计得不是很好libraryTarget无法做扩展
+ * @description   rewrite LibraryTemplatePlugin.Apply()
  */
 var LibraryTemplatePlugin = require("webpack/lib/LibraryTemplatePlugin"),
 
-  originLibraryTemplateApply = LibraryTemplatePlugin.prototype.apply,
+  origin = LibraryTemplatePlugin.prototype.apply,
 
   seajsTemplatePlugin = require('../lib/seajsTemplatePlugin');
 
@@ -16,11 +15,11 @@ exports.apply = function() {
 }
 
 
-// 重写
+// rewrite
 function overwrite(compiler) {
   var me = this;
 
-  // 添加seajs模板
+  // To add seajs libraryTarget 
   if (me.target === 'seajs') {
     compiler.plugin("this-compilation", function(compilation) {
       compilation.apply(new seajsTemplatePlugin());
@@ -28,6 +27,6 @@ function overwrite(compiler) {
     return;
   }
 
-  // 非seajs还是使用之前的方法
-  originLibraryTemplateApply.apply(me, arguments);
+  // If not seajs, use origin
+  origin.apply(me, arguments);
 };

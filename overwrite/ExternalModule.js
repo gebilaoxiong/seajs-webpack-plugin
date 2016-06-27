@@ -1,8 +1,7 @@
 /**
- * @authors       xiongyang (xiongyang@zhubajie.com)
+ * @authors       gebilaoxiong (gebilaoxiong@gmail.com)
  * @date          2016-06-24 18:02:37
- * @description   重写ExternalModuleSoucePlugin的Apply方法
- *                webpack这里设计得不是很好libraryTarget无法做扩展
+ * @description   rewrite ExternalModuleSoucePlugin.Apply()
  */
 
 var ExternalModule = require("webpack/lib/ExternalModule"),
@@ -24,7 +23,7 @@ exports.apply = function() {
 
 
 /**
- * 重写
+ * rewrite
  */
 function overwrite() {
   var me = this;
@@ -36,7 +35,7 @@ function overwrite() {
 
 
 /**
- * 构建seajs ExternalModule 代码
+ * export seajs External module source
  */
 function buildSeajsExternalModuleSource() {
   var me = this,
