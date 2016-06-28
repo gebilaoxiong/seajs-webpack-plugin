@@ -5,4 +5,4 @@
 # Mac crap
 .DS_Store
 
-.npm-debug.log
+npm-debug.log

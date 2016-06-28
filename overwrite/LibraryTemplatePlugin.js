@@ -22,7 +22,7 @@ function overwrite(compiler) {
   // To add seajs libraryTarget 
   if (me.target === 'seajs') {
     compiler.plugin("this-compilation", function(compilation) {
-      compilation.apply(new seajsTemplatePlugin());
+      compilation.apply(new seajsTemplatePlugin(this.name));
     });
     return;
   }
