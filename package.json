@@ -1,12 +1,15 @@
 {
   "name": "seajs-webpack-plugin",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "将webpack生成的文件转换成seajs模块文件。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "webpack": "^1.13.1",
+    "webpack-core": "~0.6.0"
+  },
   "author": "gebilaoxiong",
   "license": "ISC"
 }
